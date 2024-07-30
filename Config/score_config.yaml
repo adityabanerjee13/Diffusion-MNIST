@@ -1,0 +1,27 @@
+dataset_params:
+  im_path: 'data/train'
+
+score_params:
+  num_timesteps : 10
+  sigma_1 : 20
+  sigma_L : 0.01
+  epsilon : 0.00002
+
+model_params:
+  im_channels : 1
+  im_size : 28
+  down_channels : [32, 64, 128, 256]
+  mid_channels : [256, 256, 128]
+  down_sample : [True, True, False]
+  time_emb_dim : 128
+  num_heads : 4
+  layers : 2
+
+train_params : 
+  task_name : 'default'
+  batch_size : 64
+  num_epochs : 100
+  num_samples : 100
+  num_grid_rows : 10
+  lr : 0.001
+  ckpt_name : 'score_ckpt.pth'
